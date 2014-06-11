@@ -1,12 +1,24 @@
 {
-    "name": "bitcoincharts-to-quicken",
-    "version": "0.0.1",
-    "description": "converts bitcoincharts data to a quicken importable format",
-    "repository": "https://github.com/nebman/",
-    "author": "nebman",
-    "dependencies": {
-        "express": ">=4.4.2",
-        "request": ">=2.36.0",
-        "strftime": ">=0.8.0"
-    }
+  "name": "bitcoincharts-to-quicken",
+  "version": "0.0.1",
+  "description": "converts bitcoincharts data to a quicken importable format",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nebman/"
+  },
+  "author": "nebman",
+  "dependencies": {
+    "express": "4.4.x",
+    "request": "2.36.x",
+    "strftime": "0.8.x"
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "0.10.x"
+  }
 }
