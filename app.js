@@ -4,11 +4,11 @@ var request = require('request');
 var express = require('express');
 var app = express();
 
-
+// Save response and timestamp, dont update more often than every 60 minutes
 var reply = [];
 var lastUpdate = 0;
 
-
+// Send response
 var sendResponse = function(res) {
   res.set('Content-Type', 'application/json');
   res.set('Content-Length', reply.length);
@@ -16,7 +16,7 @@ var sendResponse = function(res) {
   console.log('sent response');
 };
 
-
+// Configure route for /twomonths, get update if necessary
 app.get('/twomonths', function(req, res) {
   console.log('got request');
 
@@ -46,7 +46,8 @@ app.get('/twomonths', function(req, res) {
   }
 });
 
-
-
-app.listen(process.env.PORT || 3000);
-console.log('ready');
+// Use port from ENV and start express server
+var port = Number(process.env.PORT || 3000);
+app.listen(port, function() {
+  console.log('ready on port '+ port);
+});
