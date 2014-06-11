@@ -32,9 +32,9 @@ app.get('/twomonths', function(req, res) {
         var row = datajson[i];
         var time = (strftime("%m/%d/%Y", new Date(row[0]*1000)));
         var volume = (row[5]/100).toFixed(2);
-        var close = row[4];
-        var high = row[2];
-        var low = row[3];
+        var close = row[4].toFixed(2);
+        var high = row[2].toFixed(2);
+        var low = row[3].toFixed(2);
 
         reply += ['BTCUSD', close, '--', time, '--', high, low, volume,'*'].join(',') + "\n";
       }
